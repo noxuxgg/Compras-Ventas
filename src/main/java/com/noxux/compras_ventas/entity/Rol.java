@@ -8,17 +8,19 @@ import jakarta.persistence.Id;
 public class Rol {
     //ATRIBUTOS
     @Id
-    private int identifier;
-    @Column(nullable = false, unique = true)
+    private int id;
+
+    @Column(nullable = false, length = 50)
     private String nombre;
+
     @Column()
-    private String description;
+    private String descripcion;
     
     //CONSTRUCTOR
-    public Rol(String nombre, String description, int identifier){
-        this.identifier = identifier;
+    public Rol(int id, String nombre, String descripcion){
+        this.id = id;
         this.nombre = nombre;
-        this.description = description;
+        this.descripcion = descripcion;
     }
 
     //GETTERS and SETTERS
@@ -30,20 +32,20 @@ public class Rol {
         this.nombre = nombre;
     }
 
-    public int getIdentifier() {
-        return identifier;
+    public int getId() {
+        return id;
     }
 
-    public void setIdentifier(int identifier) {
-        this.identifier = identifier;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
 }

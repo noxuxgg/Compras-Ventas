@@ -7,27 +7,27 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456
     ports:
-      - "5434:5432"
+     - "5434:5432"
     volumes:
-      - cv_postgres_data:/var/lib/postgresql/data
+     - cv_postgres_data:/var/lib/postgresql/data
     networks:
-      - cv-network 
-    restart: unless-stopped
+     - cv-network
+    restart: unless-stopped     
   spring-api:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: cv-spring-api
     ports:
-      - "8089:8089"
+     - "8089:8089"
     networks:
-      - cv-network
+     - cv-network
     depends_on:
-      - postgres
+     - postgres 
     restart: unless-stopped
 volumes:
   cv_postgres_data:
     driver: local
 networks:
   cv-network:
-    driver: bridge
+    driver: bridge    

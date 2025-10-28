@@ -23,6 +23,10 @@ public class Rol {
         this.descripcion = descripcion;
     }
 
+    public Rol(){
+        
+    }
+
     //GETTERS and SETTERS
     public String getNombre(){
         return nombre;

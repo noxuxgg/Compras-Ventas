@@ -1,5 +1,10 @@
 package com.noxux.compras_ventas.service;
 
+import java.util.List;
+
+import com.noxux.compras_ventas.dto.request.PermisoRequest;
+import com.noxux.compras_ventas.dto.response.PermisoResponse;
+
 public interface PermisoService {
     List<PermisoResponse> findAllPermiso();
     

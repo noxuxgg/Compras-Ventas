@@ -1,8 +1,11 @@
 package com.noxux.compras_ventas.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Rol {
@@ -16,6 +19,9 @@ public class Rol {
     @Column()
     private String descripcion;
     
+    @ManyToMany(mappedBy = "roles")
+    private List<Usuario> usuarios;
+
     //CONSTRUCTOR
     public Rol(int id, String nombre, String descripcion){
         this.id = id;
